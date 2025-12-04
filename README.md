@@ -1,0 +1,1 @@
+API REST desarrollada con Spring Boot que proporciona servicios de backend para un sistema de gestión de productos y usuarios. Implementa autenticación JWT, autorización basada en roles y operaciones CRUD completas con arquitectura en capas siguiendo las mejores prácticas de desarrollo empresarial.
