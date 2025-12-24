@@ -49,7 +49,7 @@ public class SpringSecurityConfig {
                         .requestMatchers(HttpMethod.GET,"/api/productos","/api/usuarios").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/usuarios").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/productos/{id}","/api/usuarios/{id}").hasAnyRole("USER","ADMIN")
-                        .requestMatchers(HttpMethod.POST, "/api/productos","/api/usuarios").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/api/productos").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.PUT,"/api/productos/{id}","/api/usuarios/{id}").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/api/productos/{id}","/api/usuarios/{id}").hasRole("ADMIN")
                         .anyRequest().authenticated())
@@ -65,7 +65,7 @@ public class SpringSecurityConfig {
     public CorsConfigurationSource configurationSource(){
         CorsConfiguration corsConfiguration = new CorsConfiguration();
 
-        corsConfiguration.setAllowedOriginPatterns(Arrays.asList("http://localhost:4200", "http://127.0.0.1:4200"));
+        corsConfiguration.setAllowedOriginPatterns(Arrays.asList("http://localhost:4200", "http://127.0.0.1:4200", "http://localhost:8080", "http://localhost:3000"));
         corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
         corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
         corsConfiguration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
